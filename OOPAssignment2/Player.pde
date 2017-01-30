@@ -23,14 +23,16 @@ class Player
     theta= 0 ;
     w=40;
     h=40;
-    x_coord = 200;
-    y_coord = 400;
+    x_coord = 40;
+    y_coord = 40;
   }
   
   void display()
   {
     pushMatrix();
     translate(pos.x,pos.y);
+    rotate(theta);
+    
     fill(255);
     rect(x_coord -40 , y_coord -40 , w,h); //outer square
       
@@ -57,13 +59,14 @@ class Player
    
    if (checkKey('w'))
    {
+     
      pos.x += lx * speed;
-      pos.y += ly * speed;
+     pos.y += ly * speed;
    }
    if (checkKey('s'))
    {
      pos.x -= lx * speed;
-      pos.y -= ly * speed;
+     pos.y -= ly * speed;
    }
    if (checkKey('a'))
    {
