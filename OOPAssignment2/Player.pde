@@ -6,6 +6,7 @@ class Player
   float theta;
   color colour;
   
+  int speed;
   int x_coord; // x coordination of the player
   int y_coord; // y coordination of the player
   
@@ -18,11 +19,12 @@ class Player
     this();
     this.colour = colour;
     
+    speed = 10;
     theta= 0 ;
     w=40;
     h=40;
-    x_coord = 40;
-    y_coord = 40;
+    x_coord = 200;
+    y_coord = 400;
   }
   
   void display()
@@ -32,7 +34,7 @@ class Player
     fill(255);
     rect(x_coord -40 , y_coord -40 , w,h); //outer square
       
-    fill(colour);
+    fill(255);
     rect(x_coord - 30, y_coord-30 ,w/2,h/2); //inner square
       
     //wheels
@@ -41,8 +43,35 @@ class Player
     rect(x_coord,y_coord - 50 ,w-30,h+20); //right wheel
       
     //cannon
-    fill(255);
+    fill(colour);
     rect(x_coord - 25,y_coord-30,w-30,-h);
     popMatrix();
+  }
+  
+  void update()
+  {
+   float lx, ly;
+   lx = sin(theta);
+   ly = -cos(theta);
+    
+   
+   if (checkKey('w'))
+   {
+     pos.x += lx * speed;
+      pos.y += ly * speed;
+   }
+   if (checkKey('s'))
+   {
+     pos.x -= lx * speed;
+      pos.y -= ly * speed;
+   }
+   if (checkKey('a'))
+   {
+     theta -= 0.1f;
+   }
+   if (checkKey('d'))
+   {
+     theta += 0.1f;
+   }
   }
 }
