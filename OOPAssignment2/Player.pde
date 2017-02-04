@@ -6,9 +6,17 @@ class Player
   float theta;
   color colour;
   
+  float trackTime = 1.0f / 60.0f;
+  float fireRate = 10.0f; // how fast each bullet is fired
+  float passBy = 0.0f; // how many bullets has passed by
+  float toPass = 1.0f / fireRate;
+  
   int speed;
   int x_coord; // x coordination of the player
   int y_coord; // y coordination of the player
+  
+  
+  boolean live;  // to see if the bullet will live or not
   
    Player()
   {
@@ -53,20 +61,37 @@ class Player
   void update()
   {
    float lx, ly;
+   passBy += trackTime;
+   
    lx = sin(theta);
    ly = -cos(theta);
     
    
    if (checkKey('w'))
    {
-     
-     pos.x += lx * speed;
-     pos.y += ly * speed;
+     if((pos.x<width&&pos.x>0)&&(pos.y<height&&pos.y>0))
+     {
+       pos.x += lx * speed;
+       pos.y += ly * speed;
+     }
+     else
+     {
+       pos.x += lx * -speed;
+       pos.y += ly * -speed;
+     }
    }
    if (checkKey('s'))
    {
+     if((pos.x<width&&pos.x>0)&&(pos.y<height&&pos.y>0))
+     {
      pos.x -= lx * speed;
      pos.y -= ly * speed;
+     }
+     else
+     {
+       pos.x += lx * speed;
+       pos.y += ly * speed;
+     }
    }
    if (checkKey('a'))
    {
@@ -75,6 +100,18 @@ class Player
    if (checkKey('d'))
    {
      theta += 0.1f;
+   }
+   if (checkKey('e'))
+   {
+     if(passBy > toPass)
+      {
+        Bullet bullet = new Bullet(); // creates the Bullet 
+        bullet.pos.x = pos.x; // uses the player's x position
+        bullet.pos.y = pos.y; // uses the player's y position
+        bullet.theta = theta;
+        players.add(bullet); 
+        passBy = 0.0f; // resets the bullets that has passed by
+      }
    }
   }
 }

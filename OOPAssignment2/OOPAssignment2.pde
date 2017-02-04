@@ -1,5 +1,5 @@
 /*
-  Author: Daragh Browne
+Author: Daragh Browne
 
 DIT OOP Assignment 2
 ====================
