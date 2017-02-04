@@ -44,11 +44,9 @@ class Player
     fill(255);
     rect(x_coord -40 , y_coord -40 , w,h); //outer square
       
-    fill(255);
     rect(x_coord - 30, y_coord-30 ,w/2,h/2); //inner square
       
     //wheels
-    fill(255);
     rect(x_coord - 50 , y_coord - 50 ,w-30,h+20); //left wheel
     rect(x_coord,y_coord - 50 ,w-30,h+20); //right wheel
       
