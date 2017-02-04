@@ -27,7 +27,7 @@ class Player
     this();
     this.colour = colour;
     
-    speed = 10;
+    speed = 6;
     theta= 0 ;
     w=40;
     h=40;
@@ -69,29 +69,13 @@ class Player
    
    if (checkKey('w'))
    {
-     if((pos.x<width&&pos.x>0)&&(pos.y<height&&pos.y>0))
-     {
-       pos.x += lx * speed;
-       pos.y += ly * speed;
-     }
-     else
-     {
-       pos.x += lx * -speed;
-       pos.y += ly * -speed;
-     }
+     pos.x += lx * speed;
+     pos.y += ly * speed;
    }
    if (checkKey('s'))
    {
-     if((pos.x<width&&pos.x>0)&&(pos.y<height&&pos.y>0))
-     {
      pos.x -= lx * speed;
      pos.y -= ly * speed;
-     }
-     else
-     {
-       pos.x += lx * speed;
-       pos.y += ly * speed;
-     }
    }
    if (checkKey('a'))
    {

@@ -1,0 +1,4 @@
+class Enemy extends Player
+{
+  
+}
