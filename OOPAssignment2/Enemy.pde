@@ -3,8 +3,8 @@ class Enemy extends Player
   float w,h;
   float x,y;
   
-  float movementX = 0.50f; // to move the enemies' X- axis
-  float movementY = 0.60f; // to move the enemies' Y- axis
+  float movementX = 0.30f; // to move the enemies' X- axis
+  float movementY = 0.40f; // to move the enemies' Y- axis
   
   Enemy(float w, float h, float x, float y)
   {
@@ -46,7 +46,7 @@ class Enemy extends Player
     
     
     // draws the enemy
-    fill(0,255,0); // colour green
+    fill(0,120,250); // colour blue
     rect(pos.x,pos.y , w, h); 
     
     fill(0,255,255);
