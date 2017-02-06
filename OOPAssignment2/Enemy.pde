@@ -3,23 +3,22 @@ class Enemy extends Player
   float w,h;
   float x,y;
   
-  float movementX = 0.30f; // to move the enemies' X- axis
-  float movementY = 0.40f; // to move the enemies' Y- axis
+  float movementX = 0.1f; // to move the enemies' X- axis
+  float movementY = 0.2f; // to move the enemies' Y- axis
   
   Enemy(float w, float h, float x, float y)
   {
     this.w = w;
-    this.h = h;
+    this.h = h;//this width and height for size of enemy
     
-    pos.x = x; // random positions
-    pos.y = y; // random positions
+    pos.x = x; // random positions on x axis
+    pos.y = y; // random positions on y axis
   }
   
   void update()
   {
     
   }
-  
   
   void display()
   {
@@ -48,7 +47,6 @@ class Enemy extends Player
     // draws the enemy
     fill(0,120,250); // colour blue
     rect(pos.x,pos.y , w, h); 
-    
     fill(0,255,255);
     stroke(0);
     rect(pos.x + 5, pos.y +5, 4,2); // left eye of the enemy

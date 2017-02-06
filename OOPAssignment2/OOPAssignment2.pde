@@ -16,9 +16,10 @@ void setup()
   
   
   //create the number of enemies
-  for(int i= 0 ; i < 15; i++)
+  for(int i= 0 ; i < 20; i++)
   {
-    Enemy enemy = new Enemy(random(20,40),random(20,40),random(100 ,width),random(height/2,height));
+    //i amount of enemies spawned with a random size between a certain range and spawning at random location on x and y axis
+    Enemy enemy = new Enemy(random(20,40),random(20,40),random(0 ,width),random(0,height));
     players.add(enemy); //  draws the enemy objects
     enemies.add(enemy);
     
@@ -50,7 +51,7 @@ boolean checkKey(int k)
 void draw()
 {
   background(0);
-  
+   
   p.update();
   p.display();
   

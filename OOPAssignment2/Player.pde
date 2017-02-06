@@ -4,16 +4,16 @@ class Player
   
   float w,h; // width and height of th player
   float theta;
-  color colour;
+  color colour;//The colour of the tank being passed in as a parameter
   
   float trackTime = 1.0f / 60.0f;
-  float fireRate = 10.0f; // how fast each bullet is fired
+  float fireRate = 5.0f; // how fast each bullet is fired
   float passBy = 0.0f; // how many bullets has passed by
   float toPass = 1.0f / fireRate;
   
   int speed;
   int x_coord; // x coordination of the player
-  int y_coord; // y coordination of the player
+  int y_coord; // y coordinationd of the player
   
   
   boolean live;  // to see if the bullet will live or not
