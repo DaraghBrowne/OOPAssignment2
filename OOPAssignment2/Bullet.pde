@@ -42,6 +42,7 @@ class Bullet extends Player
       Enemy enemy = enemies.get(j); // checks which enemy will be hit
       if (collision(enemy))
       {
+        score++; //score increases as you kill enemys
         
         enemy.pos.x = 10000; // will make the enemy disappear
         enemy.pos.y = 10000; // will make the enemy disappear

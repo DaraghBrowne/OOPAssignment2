@@ -3,8 +3,8 @@ class Enemy extends Player
   float w,h;
   float x,y;
   
-  float movementX = 0.1f; // to move the enemies' X- axis
-  float movementY = 0.2f; // to move the enemies' Y- axis
+  float movementX = 0.2f; // to move the enemies' X- axis
+  float movementY = 0.1f; // to move the enemies' Y- axis
   
   Enemy(float w, float h, float x, float y)
   {
