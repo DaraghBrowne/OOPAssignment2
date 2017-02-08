@@ -131,7 +131,7 @@ void draw()
     fill(255);
     text("YOU WIN!", width/2-200,  height/3);
     textSize(40);
-    text("Press z to play again", width/2 - 200, height/2 + 60);
+    text("Press z to play again(more difficult)", width/6 - 50, height/2 + 60);
     text("Your Score is: " + score, width/2 - 140, height/2 + 150);
     text("You used: " + bulletsUsed + " bullets", width/2 - 190, height/2 + 220);
           
@@ -143,6 +143,14 @@ void draw()
       score = 0;
       bulletsUsed = 0;
       health = 25;
+      //create the number of enemies
+      for(int i= 0 ; i < 25; i++)
+      {
+        Enemy enemy = new Enemy(random(20,40),random(20,40),random(100 ,width),random(height/2,height));
+        players.add(enemy); //  draws the enemy objects
+        enemies.add(enemy);
+        
+      }//end for loop
     }
   }
   
@@ -167,7 +175,7 @@ void draw()
       //resets everything
       begin = true;
       counter = 0; 
-      score = 0;
+      score = 90;
       bulletsUsed = 0;
       health = 25;
     }
