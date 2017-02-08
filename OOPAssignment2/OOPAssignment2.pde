@@ -15,7 +15,8 @@ PImage startScreen;
 boolean begin = false;
 
 int score; // keeps track of the score 
-int counter = 0;
+int counter = 1;
+int bulletsUsed = 0;
 
 
 void setup()
@@ -116,6 +117,7 @@ void draw()
     textSize(40);
     text("Press z to play again", width/2 - 200, height/2 + 60);
     text("Your Score is: " + score, width/2 - 140, height/2 + 150);
+    text("You used: " + bulletsUsed + " bullets", width/2 - 190, height/2 + 220);
           
     if(keyPressed && key == 'z') // If the player wants to play again
     {
@@ -123,6 +125,7 @@ void draw()
       begin = true;
       counter = 0; 
       score = 0;
+      bulletsUsed = 0;
     }
   }
 }

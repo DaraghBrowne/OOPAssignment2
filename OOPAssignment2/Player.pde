@@ -7,9 +7,9 @@ class Player
   color colour;//The colour of the tank being passed in as a parameter
 
   float trackTime = 1.0f / 60.0f;
-  float fireRate = 5.0f; // how fast each bullet is fired
+  float fireRate = 10.0f; // how fast each bullet is fired
   float passBy = 0.0f; // how many bullets has passed by
-  float toPass = 1.0f / fireRate;
+  float toPass =  1.0f / fireRate;
 
   int speed;
   int x_coord; // x coordination of the player
@@ -93,6 +93,7 @@ class Player
         bullet.theta = theta;
         players.add(bullet); 
         passBy = 0.0f; // resets the bullets that has passed by
+        bulletsUsed++;
       }
     }
   }
