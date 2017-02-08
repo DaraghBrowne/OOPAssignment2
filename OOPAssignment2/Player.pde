@@ -97,4 +97,31 @@ class Player
       }
     }
   }
+  
+  // determines if there is collision between the player and the enemy
+  boolean collides(Player p) 
+  {
+     //check if they dont collide
+    if (p.pos.x + p.w < pos.x) // to check the x axis of the player if it hits an enemy
+    {
+      return false;
+    }
+    if (p.pos.x > pos.x + w) // to check the x axis of the player if it hits an enemy
+    {
+      return false;
+    }
+    if (p.pos.y > pos.y + h) // to check the y axis of the player if it hits the enemy
+    {
+      return false;
+    }
+    if (p.pos.y + p.h < pos.y) // to check the y axis of the player if it hits the enemy
+    {
+      return false;
+    }
+    
+    // If they collided then its true
+    return true;
+    
+    
+  }//end boolean
 }

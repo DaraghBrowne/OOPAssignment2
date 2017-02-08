@@ -14,9 +14,11 @@ Player p = new Player(color(0, 255, 40));
 PImage startScreen;
 boolean begin = false;
 
-int score; // keeps track of the score 
-int counter = 1;
+int score = 0; // keeps track of the score 
+int counter = 0;
 int bulletsUsed = 0;
+
+int health = 25;
 
 
 void setup()
@@ -94,7 +96,21 @@ void draw()
 
     textFont(f);
     text("Score: " + score, 10, 20);
-
+    text("Health: " + health, 10, 40);
+  
+  
+    //check for collision between enemy and player 
+      for (int j =  0 ; j < enemies.size() ; j ++)
+      {
+        Enemy enemy1 = enemies.get(j);
+        if (p.collides(enemy1))
+        {
+          health --;
+     
+        }//end if
+      }//end for loop
+    
+    
     for (int i =0; i < players.size(); i++)
     {
       players.get(i).update();
