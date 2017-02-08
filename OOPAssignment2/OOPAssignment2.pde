@@ -3,7 +3,7 @@ Author: Daragh Browne
  
  DIT OOP Assignment 2
  ====================
- MultiplayerTanks Game
+ Tanks Game
  */
 ArrayList<Player> players = new ArrayList<Player>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
@@ -154,7 +154,7 @@ void draw()
     }
   }
   
-  if (health == 0)
+  if (health <= 0)
   { 
     counter = 2;
     
