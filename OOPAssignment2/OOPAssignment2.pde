@@ -142,6 +142,35 @@ void draw()
       counter = 0; 
       score = 0;
       bulletsUsed = 0;
+      health = 25;
     }
   }
+  
+  if (health == 0)
+  { 
+    counter = 2;
+    
+  }
+  if(counter == 2)
+  {
+    textSize(100);
+    background(0);
+    fill(255);
+    text("YOU DIED!", width/2-200,  height/3);
+    textSize(40);
+    text("Press z to play again", width/2 - 200, height/2 + 60);
+    text("Your Score is: " + score, width/2 - 140, height/2 + 150);
+    text("You used: " + bulletsUsed + " bullets", width/2 - 190, height/2 + 220);
+          
+    if(keyPressed && key == 'z') // If the player wants to play again
+    {
+      //resets everything
+      begin = true;
+      counter = 0; 
+      score = 0;
+      bulletsUsed = 0;
+      health = 25;
+    }
+          
+   }
 }
